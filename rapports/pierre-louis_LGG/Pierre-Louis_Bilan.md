@@ -6,11 +6,10 @@ L'objectif est de verrouiller toutes les entrées sauf une, et d'exiger une clé
 Cette suite se tape depuis votre ordinateur personnel, avant même de configurer le serveur.
 
 ```bash
-# création de la clée ssh
 ssh-keygen -t ed25519
 
 # envoi de la clée ssh sur bastillon
-ssh-copy-id utilisateur@127.0.0.1 #l'ip du serveur (loopback)
+ssh-copy-id root@127.0.0.1 #l'ip du serveur (loopback)
 
 ```
 
