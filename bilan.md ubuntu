@@ -1,0 +1,45 @@
+Bilan Ubuntu – Sécurisation du Bastion
+
+Dans ce TP, j’ai appris à sécuriser un système Ubuntu en configurant plusieurs protections.
+
+1. Mise à jour du système
+
+J’ai commencé par actualiser la liste des paquets avec sudo apt update, puis installé les mises à jour disponibles avec sudo apt upgrade. Cela permet de corriger certaines failles de sécurité et de maintenir le système à jour.
+
+2. Sécurité des mots de passe
+
+J’ai configuré le fichier pwquality.conf pour renforcer les exigences concernant les mots de passe, notamment en définissant une longueur minimale de 12 caractères avec minlen = 12. J’ai également appris que le symbole # permet de commenter une ligne.
+
+3. Gestion des utilisateurs et des permissions
+
+J’ai travaillé sur les comptes utilisateurs et les droits d’accès. J’ai appris à utiliser sudo pour effectuer des opérations administratives et chmod pour modifier les permissions des fichiers, notamment pour protéger les clés privées SSH.
+
+4. Sécurisation du serveur SSH
+
+J’ai configuré SSH pour permettre une connexion distante sécurisée. J’ai mis en place une authentification par clé publique afin de remplacer l’utilisation du mot de passe.
+
+J’ai également configuré les paramètres suivants :
+
+PermitRootLogin no pour interdire les connexions SSH directes en root.
+PasswordAuthentication no pour désactiver l’authentification SSH par mot de passe.
+AllowUsers ilian pour limiter les utilisateurs autorisés à se connecter.
+J’ai ensuite vérifié le fonctionnement du service SSH et testé la connexion.
+
+5. Protection avec Fail2ban
+
+J’ai travaillé sur Fail2ban, qui permet de surveiller les tentatives de connexion échouées et de bannir temporairement les adresses IP suspectes.
+
+J’ai appris le rôle de trois paramètres :
+
+maxretry : nombre maximal d’échecs avant bannissement.
+findtime : période pendant laquelle les échecs sont comptabilisés.
+bantime : durée du bannissement.
+6. Vérification du bilan
+
+Enfin, j’ai utilisé le menu du Kit du Bastion (menu.sh) pour vérifier les différentes étapes de sécurisation et identifier les protections restant à configurer.
+
+Ce que j’ai compris
+
+Ce TP m’a permis de comprendre qu’un système Ubuntu ne se sécurise pas avec une seule protection. Il faut maintenir le système à jour, renforcer les mots de passe, gérer les permissions, protéger les connexions SSH et limiter les tentatives de connexion abusives avec Fail2ban.
+
+J’ai également compris l’importance de vérifier qu’une configuration fonctionne réellement après l’avoir modifiée
