@@ -1,7 +1,0 @@
-sauvegardes/*
-!sauvegardes/.gitkeep
-/etc/
-*.tar.gz
-*.tgz
-*.img
-*.img.gz
